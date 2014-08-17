@@ -14,7 +14,7 @@ Check `lib/palindrome_service.rb` for the logic and `spec/services/palindrome_se
 
 Main function:
 
-````
+````ruby
 def build_palindrome(number)
   string, mid, left, right = prepare number
 
