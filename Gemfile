@@ -38,4 +38,6 @@ group :development, :test do
   gem 'rb-readline'
 end
 
+gem 'unicorn'
+
 ruby "2.1.2"
