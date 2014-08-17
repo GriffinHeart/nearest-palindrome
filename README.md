@@ -3,7 +3,7 @@ nearest-palindrome
 
 Small application to find the nearest palindrome from a given number
 
-![](https://travis-ci.org/GriffinHeart/nearest-palindrome.svg?branch=master)
+[![Build Status](https://travis-ci.org/GriffinHeart/nearest-palindrome.svg?branch=master)](https://travis-ci.org/GriffinHeart/nearest-palindrome)
 
 Available at: http://nearest-palindrome.herokuapp.com/
 
@@ -68,4 +68,25 @@ def build_palindrome(number)
   "#{result_half.reverse}#{result_mid}#{result_half}".to_i
 end
 
+````
+
+Example usage:
+
+````ruby
+Frame number: 0/21
+[1] nearest_palindrome >  load "lib/palindrome_service.rb"
+=> true
+[2] nearest_palindrome >  svc = PalindromeService.new
+=> #<PalindromeService:0x007fdec1cf3878>
+[3] nearest_palindrome >  svc.nearest_palindrome 1
+=> 2
+[4] nearest_palindrome >  svc.nearest_palindrome 999
+=> 1001
+[5] nearest_palindrome >  svc.nearest_palindrome 123
+=> 131
+[6] nearest_palindrome >  svc.nearest_palindrome 34823748296
+=> 34823832843
+[7] nearest_palindrome >  svc.nearest_palindrome 3482439027
+=> 3482552843
+[8] nearest_palindrome >
 ````
