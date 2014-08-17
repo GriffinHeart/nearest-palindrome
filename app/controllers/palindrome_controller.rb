@@ -1,0 +1,2 @@
+class PalindromeController < ApplicationController
+end

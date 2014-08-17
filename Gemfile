@@ -24,15 +24,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'rails_12factor', group: :production
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+  # Use Jazz Hands for powerfull rails console
+  gem 'jazz_hands',
+      github: 'nixme/jazz_hands',
+      branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
+  # fixes input problem with pry and spring
+  gem 'rb-readline'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+ruby "2.1.2"
