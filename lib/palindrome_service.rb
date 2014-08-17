@@ -1,4 +1,6 @@
 class PalindromeService
+  class NotANumber < StandardError ; end
+  class NegativeValue < StandardError ; end
 
   def palindrome?(number)
     string, mid, left, right = prepare number
@@ -9,6 +11,9 @@ class PalindromeService
   end
 
   def nearest_palindrome(number, includes_number = false)
+    fail(NotANumber, "please provide an integer number") unless number.is_a? Integer 
+    fail(NegativeValue, "please provide a positive number") unless number > 0
+
     return number if includes_number && palindrome?(number)
 
 

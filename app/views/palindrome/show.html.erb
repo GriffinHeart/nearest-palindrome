@@ -1,0 +1,32 @@
+<h2>Welcome</h2>
+<%= form_tag(calculate_path, method: :post) do |f| %>
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>Find the nearest palindrome</legend>
+
+    <!-- Text input-->
+    <div class="control-group">
+      <label class="control-label" for="number">The number</label>
+      <div class="controls">
+        <%= text_field_tag :number, @number, placeholder: 'ex.: 121212', class: 'input-xlarge', required: '' %>
+        <p class="help-block">The number that you want to find the nearest palindrome</p>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="control-group">
+      <label class="control-label" for="singlebutton"></label>
+      <div class="controls">
+        <%= submit_tag "Submit", id: :singlebutton, name: :singlebutton, class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>
+
+  <% if @result %>
+    <div style="margin-top: 50px">
+      The nearest palindrome is: <%= @result %>
+    </div>
+  <% end %>
